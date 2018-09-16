@@ -50,3 +50,18 @@ as.numeric(df_1$study_year)
 
 The as.numeric function worked for all the variables except the character variable (student_name). For character variable it gave the warning: NAs introduced by coercion.
 
+####Converting variables from one form to the other
+
+
+
+```{r} 
+char_to_factor = as.factor(df_1$student_name)
+factor_to_num = as.numeric(char_to_factor)
+factor_to_char = as.character(df_1$study_year)
+char_to_numeric = as.numeric(factor_to_char)
+```
+
+* The as.factor function for the character variable (student name) created ten levels. Further converting it to numeric using as.numeric function, gave them a numeric value as per their alphabetical order. 
+
+* The as.character function for the factor variable (study year) gave the same values that were inputed while making the data frame. Further converting it into the nuumeric gave the warning message; NAs introduced by coercion.
+
