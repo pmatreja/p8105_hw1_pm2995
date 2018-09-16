@@ -85,3 +85,17 @@ df_2 = tibble(x = rnorm(1000),
 * The mean and median of x are `r mean(df_2$x)` and `r median(df_2$x)` respectively. 
 
 * The proportion of cases for which logical vector is true is `r length(which(df_2$vec_logical))/length(df_2$vec_logical)`
+
+####Scatterplot of y vs x
+
+```{r yx_scatter_plot}
+ggplot(df_2, aes(x = x, y = y, color = vec_logical)) + geom_point()
+
+ggplot(df_2, aes(x = x, y = y, color = vec_numeric)) + geom_point()
+
+ggplot(df_2, aes(x = x, y = y, color = vec_factor)) + geom_point()
+
+ggsave("df_2plots.pdf")
+```
+
+Comment on color scales:
