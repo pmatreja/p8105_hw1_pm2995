@@ -7,6 +7,35 @@ output: github_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
 
+#Problem 1
+
+
+####Creation of a Data Frame
+
+
+```{r}
+set.seed(1)
+df_1 = tibble( 
+       random_samp = runif(10,0,5),
+       greater_than_2 = random_samp > 2,
+       student_name = c("Emma", "Sophia", "Serra", "Elisa", "John", "Jessica","Ross","Kaity", "Jo","Luke"),
+       study_year = factor(c("First" , "First", "Second", "First", "Third", "Second", "Second", "Third", "First", "First"))
+)
+
+```
+
+####Mean of each variable in Data Frame
+
+* Mean of random sample is `r mean(df_1$random_samp)`
+
+* Mean of the logical vector greater_than_2 is `r mean(df_1$greater_than_2)`
+
+* Mean of character variable is `r mean(df_1$student_name)`
+
+* Mean of factor variable is `r mean(df_1$study_year)`
+
+Mean command did not work for variable student_name and study_year as they both are not numeric and logical variables respectively whose mean can be taken.
 
