@@ -65,3 +65,23 @@ char_to_numeric = as.numeric(factor_to_char)
 
 * The as.character function for the factor variable (study year) gave the same values that were inputed while making the data frame. Further converting it into the nuumeric gave the warning message; NAs introduced by coercion.
 
+
+#Problem 2
+
+```{r}
+set.seed(2)
+df_2 = tibble(x = rnorm(1000),
+  y = rnorm(1000),
+  vec_logical = ((x + y) > 0),
+  vec_numeric = as.numeric(vec_logical),
+  vec_factor = as.factor(vec_logical)
+)
+```
+
+####Short description of the data set
+
+* The size of the dataset is `r nrow(df_2)` x `r ncol(df_2)`.
+
+* The mean and median of x are `r mean(df_2$x)` and `r median(df_2$x)` respectively. 
+
+* The proportion of cases for which logical vector is true is `r length(which(df_2$vec_logical))/length(df_2$vec_logical)`
