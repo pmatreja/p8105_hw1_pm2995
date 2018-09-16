@@ -39,3 +39,14 @@ df_1 = tibble(
 
 Mean command did not work for variable student_name and study_year as they both are not numeric and logical variables respectively whose mean can be taken.
 
+####Applying as.numeric function
+
+```{r, results='hide'}
+as.numeric(df_1$random_samp)
+as.numeric(df_1$greater_than_2)
+as.numeric(df_1$student_name)
+as.numeric(df_1$study_year)
+```
+
+The as.numeric function worked for all the variables except the character variable (student_name). For character variable it gave the warning: NAs introduced by coercion.
+
