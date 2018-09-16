@@ -2,7 +2,7 @@
 title: "p8105_hw1_pm2995"
 author: "Priyal"
 date: "9/14/2018"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
