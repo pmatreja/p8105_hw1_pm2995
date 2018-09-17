@@ -13,7 +13,7 @@ library(tidyverse)
 #Problem 1
 
 
-####Creation of a Data Frame
+####Creation of a data frame
 
 
 ```{r}
@@ -27,7 +27,7 @@ df_1 = tibble(
 
 ```
 
-####Mean of each variable in Data Frame
+####Mean of each variable in data frame
 
 * Mean of random sample is `r mean(df_1$random_samp)`
 
@@ -37,7 +37,7 @@ df_1 = tibble(
 
 * Mean of factor variable is `r mean(df_1$study_year)`
 
-Mean command did not work for variable student_name and study_year as they both are not numeric and logical variables respectively whose mean can be taken.
+Mean command did not work for variable student_name and study_year as they both are not numeric and logical variables respectively and hence their mean can not be calculated.
 
 ####Applying as.numeric function
 
@@ -58,12 +58,12 @@ The as.numeric function worked for all the variables except the character variab
 char_to_factor = as.factor(df_1$student_name)
 factor_to_num = as.numeric(char_to_factor)
 factor_to_char = as.character(df_1$study_year)
-char_to_numeric = as.numeric(factor_to_char)
+char_to_num = as.numeric(factor_to_char)
 ```
 
 * The as.factor function for the character variable (student name) created ten levels. Further converting it to numeric using as.numeric function, gave them a numeric value as per their alphabetical order. 
 
-* The as.character function for the factor variable (study year) gave the same values that were inputed while making the data frame. Further converting it into the nuumeric gave the warning message; NAs introduced by coercion.
+* The as.character function for the factor variable (study year) gave the same values that were inputed while making the data frame. Further converting it into the numeric gave the warning message; NAs introduced by coercion.
 
 
 #Problem 2
@@ -90,12 +90,13 @@ df_2 = tibble(x = rnorm(1000),
 
 ```{r yx_scatter_plot}
 ggplot(df_2, aes(x = x, y = y, color = vec_logical)) + geom_point()
+ggsave("df_2plots.pdf")
 
 ggplot(df_2, aes(x = x, y = y, color = vec_numeric)) + geom_point()
 
 ggplot(df_2, aes(x = x, y = y, color = vec_factor)) + geom_point()
 
-ggsave("df_2plots.pdf")
 ```
 
-Comment on color scales:
+####Comment on color scales:
+We can see the similarity between the color scales of first and third scatter plot that are indicating TRUE and FALSE observations.
