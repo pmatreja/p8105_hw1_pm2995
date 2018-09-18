@@ -90,6 +90,7 @@ df_2 = tibble(
 ####Scatterplot of y vs x
 
 ```{r yx_scatter_plot}
+
 ggplot(df_2, aes(x = x, y = y, color = vec_logical)) + geom_point()
 ggsave("df_2plots.pdf")
 
