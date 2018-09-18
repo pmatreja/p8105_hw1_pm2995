@@ -21,7 +21,7 @@ set.seed(1)
 df_1 = tibble( 
        random_samp = runif(10,0,5),
        greater_than_2 = random_samp > 2,
-       student_name = c("Emma", "Sophia", "Serra", "Elisa", "John", "Jessica","Ross","Kaity", "Jo","Luke"),
+       student_name = c("Emma", "Sophia", "Serra", "Elisa", "John", "Jessica","Ross","Kaity",    "Jo","Luke"),
        study_year = factor(c("First" , "First", "Second", "First", "Third", "Second", "Second", "Third", "First", "First"))
 )
 
@@ -29,13 +29,13 @@ df_1 = tibble(
 
 ####Mean of each variable in data frame
 
-* Mean of random sample is `r mean(df_1$random_samp)`
+* Mean of random sample is `r mean (df_1$random_samp)`
 
-* Mean of the logical vector greater_than_2 is `r mean(df_1$greater_than_2)`
+* Mean of the logical vector greater_than_2 is `r mean (df_1$greater_than_2)`
 
-* Mean of character variable is `r mean(df_1$student_name)`
+* Mean of character variable is `r mean (df_1$student_name)`
 
-* Mean of factor variable is `r mean(df_1$study_year)`
+* Mean of factor variable is `r mean (df_1$study_year)`
 
 Mean command did not work for variable student_name and study_year as they both are not numeric and logical variables respectively and hence their mean can not be calculated.
 
@@ -70,7 +70,8 @@ char_to_num = as.numeric(factor_to_char)
 
 ```{r}
 set.seed(2)
-df_2 = tibble(x = rnorm(1000),
+df_2 = tibble(
+  x = rnorm(1000),
   y = rnorm(1000),
   vec_logical = ((x + y) > 0),
   vec_numeric = as.numeric(vec_logical),
@@ -80,11 +81,11 @@ df_2 = tibble(x = rnorm(1000),
 
 ####Short description of the data set
 
-* The size of the dataset is `r nrow(df_2)` x `r ncol(df_2)`.
+* The size of the dataset is `r nrow (df_2)` x `r ncol(df_2)`.
 
-* The mean and median of x are `r mean(df_2$x)` and `r median(df_2$x)` respectively. 
+* The mean and median of x are `r mean (df_2$x)` and `r median (df_2$x)` respectively. 
 
-* The proportion of cases for which logical vector is true is `r length(which(df_2$vec_logical))/length(df_2$vec_logical)`
+* The proportion of cases for which logical vector is true is `r length (which (df_2$vec_logical)) / length (df_2$vec_logical)`
 
 ####Scatterplot of y vs x
 
@@ -99,4 +100,4 @@ ggplot(df_2, aes(x = x, y = y, color = vec_factor)) + geom_point()
 ```
 
 ####Comment on color scales:
-We can see the similarity between the color scales of first and third scatter plot that are indicating TRUE and FALSE observations.
+We can see the similarity between the color scales of first and third scatter plot that are indicating TRUE and FALSE observations. The second scatter plot has the color scale ranging 0.00 to 1.00 value.
